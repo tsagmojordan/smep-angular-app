@@ -1,59 +1,122 @@
-# AngularApp
+# Public Lighting Management System - Angular Application
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.1.
+## Overview
 
-## Development server
+This is a web application built with Angular to manage public lighting systems, designed to monitor and control streetlights, track energy consumption, handle maintenance, and generate reports. It interacts with a microservices-based backend to provide a scalable, secure, and user-friendly solution for municipalities, energy providers, and maintenance teams in a context like Cameroon.
 
-To start a local development server, run:
+## Features
 
-```bash
-ng serve
-```
+- **User Management**
+  - User registration and authentication (login/logout)
+  - Profile updates for personal info and preferences
+  - Admin approval for new accounts
+- **Streetlight Management**
+  - Add, update, or remove streetlights
+  - Group streetlights and control them remotely (on/off, intensity)
+  - Create lighting profiles (schedules, intensity levels)
+  - Real-time health monitoring (GPS, energy use, temperature, voltage, power, etc.)
+  - Color-coded status display (e.g., green for operational, red for faulty)
+- **Reports**
+  - Export statistics in CSV and PDF formats
+  - Generate maintenance and energy reports
+  - Analyze logs for failures, energy savings, and consumption
+- **Consumption Management**
+  - Calculate energy use for groups, districts, departments, or regions
+  - Estimate savings and public lighting bills
+- **Maintenance**
+  - Receive real-time notifications for failures with location and cause
+  - Predictive AI for anticipating issues and planning interventions
+  - View failure history with AI-driven improvement suggestions
+  - Daily auto-scan for equipment health
+- **Non-Functional**
+  - Fast response times and high processing capacity
+  - Secure authentication, authorization, and data encryption
+  - User-friendly, accessible, and responsive UI
+  - Reliable and scalable design
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Prerequisites
 
-## Code scaffolding
+- **Node.js**: v22.x or later
+- **npm**: v11.x or later
+- **Angular CLI**: v19.x or later
+- **Backend**: A running microservices backend (e.g., Spring Boot, Node.js) with APIs for auth, users, streetlights, maintenance, and notifications
+- **Browser**: Modern browsers (Chrome, Firefox, Edge, Safari)
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Installation
 
-```bash
-ng generate component component-name
-```
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/your-repo/public-lighting-management.git
+   cd public-lighting-management
+   ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+2. **Install Dependencies**
+   ```bash
+   npm install
+   ```
 
-```bash
-ng generate --help
-```
+  - For production, update `src/environments/environment.prod.ts` similarly.
 
-## Building
+4. **Run the Application**
+   ```bash
+   ng serve
+   ```
+  - Open your browser at `http://localhost:4200`
 
-To build the project run:
 
-```bash
-ng build
-```
+## Development
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- **Build**
+  ```bash
+  ng build
+  ```
+  - Outputs to the `dist/` folder for deployment.
 
-## Running unit tests
+- **Testing**
+  ```bash
+  ng test
+  ```
+  - Runs unit tests with Karma and Jasmine.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+- **Linting**
+  ```bash
+  ng lint
+  ```
+  - Checks code style with ESLint.
 
-```bash
-ng test
-```
+## Technologies
 
-## Running end-to-end tests
+- **Angular**: v18.x for frontend framework
+- **TypeScript**: For type-safe coding
+- **Tailwind CSS**: For responsive, utility-first styling
+- **RxJS**: For reactive programming and API calls
+- **NGX-Leaflet**: For GPS-based streetlight mapping
+- **Chart.js**: For consumption and health visualizations
+- **HTTP Client**: For backend API communication
 
-For end-to-end (e2e) testing, run:
+## Security
 
-```bash
-ng e2e
-```
+- **Authentication**: Uses JWT tokens from the backend `auth-service`.
+- **Data**: API calls secured with HTTPS; sensitive data encrypted.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Contributing
 
-## Additional Resources
+1. Fork the repository.
+2. Create a feature branch (`git checkout -b feature/new-feature`).
+3. Commit changes (`git commit -m "Add new feature"`).
+4. Push to the branch (`git push origin feature/new-feature`).
+5. Open a pull request.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+## Contact
+
+- **Project Maintainer**: Your Name (jordantsagmo@gmail.com)
+- **Issues**: Report bugs or feature requests at [GitHub Issues](https://github.com/tsagmojordan/smep-angular-app.git)
+
+## Acknowledgments
+
+- Built with inspiration from the need for cost-effective, locally adapted public lighting solutions.
+- Thanks to open-source tools like Angular, Tailwind CSS, and Leaflet.
